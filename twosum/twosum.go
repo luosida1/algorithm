@@ -4,16 +4,13 @@ import "fmt"
 
 func twoSum(nums []int, target int) []int {
 	cnt := len(nums)
-	fmt.Println(cnt)
-	var tmp []int
 
-	for i := 0; i < len(nums); i++ {
-		for j := i + 1; j < len(nums); j++ {
-			fmt.Println(i, j, nums[i], nums[i])
+	for i := 0; i < cnt; i++ {
+		for j := i + 1; j < cnt; j++ {
 			if target == nums[i]+nums[j] {
-				tmp[0] = i
-				tmp[1] = j
-				return tmp
+				nums[0] = i
+				nums[1] = j
+				return nums[:2]
 			}
 		}
 	}
@@ -21,7 +18,7 @@ func twoSum(nums []int, target int) []int {
 }
 
 func main() {
-	nums := []int{2, 7, 9, 14}
+	nums := []int{2, 0, 9, 14}
 	target := 9
 
 	result := twoSum(nums, target)
